@@ -17,28 +17,23 @@ subsequent sessions.
 - A physical device (recommended) for HealthKit testing — the simulator has
   limited Health data.
 - Swift 5.9+
-- [XcodeGen](https://github.com/yonaskolb/XcodeGen) to materialize
-  `vAINavigator.xcodeproj` from `project.yml`. (This repo intentionally does
-  not commit the generated Xcode project.)
 
-Install XcodeGen with Homebrew:
-
-```sh
-brew install xcodegen
-```
+The Xcode project (`vAINavigator.xcodeproj`) is committed. There's no
+toolchain to install before opening it. `project.yml` is kept as a
+secondary source of truth for anyone who prefers to regenerate via
+[XcodeGen](https://github.com/yonaskolb/XcodeGen).
 
 ## Setup
 
-### 1. Generate the Xcode project
+### 1. Create your local Secrets file
+
+The API key lives in `vAINavigator/Secrets.swift`, which is gitignored.
+The project references that path, so create it **before** opening Xcode:
 
 ```sh
 cd vAINavigator
-xcodegen generate
-open vAINavigator.xcodeproj
+cp vAINavigator/Secrets.swift.template vAINavigator/Secrets.swift
 ```
-
-The first time Xcode opens the project it will resolve the Swift Package
-dependencies (Google Maps + Google Places). This can take a minute.
 
 ### 2. Create a Google Cloud API key
 
@@ -59,14 +54,24 @@ dependencies (Google Maps + Google Places). This can take a minute.
 
 ### 3. Add the key to the app
 
+Open `vAINavigator/Secrets.swift` (you created it in step 1) and replace
+`YOUR_KEY_HERE` with your key. `Secrets.swift` is gitignored — commit only
+`Secrets.swift.template`.
+
+### 4. Open, build, and run
+
 ```sh
-cp vAINavigator/Secrets.swift.template vAINavigator/Secrets.swift
+open vAINavigator.xcodeproj
 ```
 
-Open `vAINavigator/Secrets.swift` and replace `YOUR_KEY_HERE` with your key.
-`Secrets.swift` is gitignored — commit only `Secrets.swift.template`.
+Xcode will resolve the Swift Package dependencies (Google Maps + Google Places)
+on first open. This takes ~1 minute.
 
-### 4. Build and run
+Signing: under **Target → Signing & Capabilities**, set the **Team** to your
+Apple Developer team. If `com.vaylaai.vAINavigator` collides with an existing
+provisioning profile, change the bundle identifier to something unique
+(e.g. `com.yourname.vAINavigator`). HealthKit is already listed as a
+capability via `vAINavigator.entitlements`.
 
 Select the **vAINavigator** scheme and run on an iOS 17+ simulator or device.
 On first launch:
@@ -87,8 +92,8 @@ Swift Package Manager only — no CocoaPods.
 | [googlemaps/ios-maps-sdk](https://github.com/googlemaps/ios-maps-sdk) | `GMSMapView`, polyline rendering, markers |
 | [googlemaps/ios-places-sdk](https://github.com/googlemaps/ios-places-sdk) | Places autocomplete for route endpoints |
 
-Both are declared in `project.yml` and materialized into the generated
-`.xcodeproj`.
+Both are declared directly in `vAINavigator.xcodeproj` and also mirrored in
+`project.yml` for anyone regenerating via XcodeGen.
 
 ---
 
@@ -96,7 +101,8 @@ Both are declared in `project.yml` and materialized into the generated
 
 ```
 vAINavigator/
-├── project.yml                       XcodeGen spec (source of truth)
+├── vAINavigator.xcodeproj/           Xcode project (committed)
+├── project.yml                       XcodeGen spec (alternate/regeneration)
 ├── README.md                         this file
 └── vAINavigator/
     ├── App/                          SwiftUI lifecycle + RootView

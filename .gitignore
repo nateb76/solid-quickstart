@@ -28,16 +28,13 @@ Thumbs.db
 # API keys (copy Secrets.swift.template → Secrets.swift locally)
 vAINavigator/vAINavigator/Secrets.swift
 
-# Xcode (user state, derived data, generated projects)
+# Xcode user-specific state only — .xcodeproj is committed
 vAINavigator/**/xcuserdata/
 vAINavigator/**/*.xcuserstate
 vAINavigator/**/DerivedData/
 vAINavigator/build/
-vAINavigator/*.xcodeproj
-vAINavigator/*.xcworkspace
 
-# Swift Package Manager
+# Swift Package Manager local caches
 vAINavigator/.build/
 vAINavigator/.swiftpm/
-vAINavigator/Package.resolved
-vAINavigator/**/*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+vAINavigator/**/xcshareddata/swiftpm/Package.resolved
