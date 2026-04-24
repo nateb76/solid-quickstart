@@ -16,10 +16,10 @@ settings:
 packages:
   GoogleMaps:
     url: https://github.com/googlemaps/ios-maps-sdk
-    minVersion: 9.0.0
+    from: 9.0.0
   GooglePlaces:
     url: https://github.com/googlemaps/ios-places-sdk
-    minVersion: 9.0.0
+    from: 9.0.0
 
 targets:
   vAINavigator:
