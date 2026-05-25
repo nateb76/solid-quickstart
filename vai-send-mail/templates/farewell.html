@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @page {
+    size: letter;
+    margin: 1in;
+  }
+  body {
+    font-family: 'Georgia', serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #1a1a1a;
+  }
+  .address-block {
+    margin-bottom: 2em;
+  }
+  .date {
+    margin-bottom: 2em;
+  }
+  .salutation {
+    margin-bottom: 1em;
+  }
+  .body-text {
+    margin-bottom: 1.5em;
+  }
+  .closing {
+    margin-top: 2em;
+  }
+  .signature {
+    margin-top: 3em;
+  }
+</style>
+</head>
+<body>
+
+<div class="address-block">
+  {{first_name}} {{last_name}}<br>
+  {{address_line1}}<br>
+  {{city}}, {{state}} {{zip}}
+</div>
+
+<div class="date">{{date}}</div>
+
+<div class="salutation">Dear {{first_name}},</div>
+
+<div class="body-text">
+  <p>We are writing to inform you that your insurance policy, number {{policy_number}}, will not be renewed upon its expiration. This decision was not made lightly, and we want to express our sincere gratitude for the time you have been a valued client of {{agency_name}}.</p>
+
+  <p>Your policy will remain in effect through its current term. We encourage you to secure replacement coverage before your policy expires to ensure you remain protected without any gap in coverage.</p>
+
+  <p>If you have any questions regarding this notice or need assistance finding alternative coverage, please do not hesitate to contact our office. We are happy to assist you during this transition.</p>
+
+  <p>We wish you all the best in the future and thank you for your trust in our agency over the years.</p>
+</div>
+
+<div class="closing">
+  Sincerely,
+</div>
+
+<div class="signature">
+  {{agency_name}}
+</div>
+
+</body>
+</html>

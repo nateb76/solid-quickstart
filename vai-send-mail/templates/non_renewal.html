@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @page {
+    size: letter;
+    margin: 1in;
+  }
+  body {
+    font-family: 'Georgia', serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #1a1a1a;
+  }
+  .address-block {
+    margin-bottom: 2em;
+  }
+  .date {
+    margin-bottom: 2em;
+  }
+  .salutation {
+    margin-bottom: 1em;
+  }
+  .body-text {
+    margin-bottom: 1.5em;
+  }
+  .notice-box {
+    border: 1px solid #333;
+    padding: 1em;
+    margin: 1.5em 0;
+    background-color: #fafafa;
+  }
+  .closing {
+    margin-top: 2em;
+  }
+  .signature {
+    margin-top: 3em;
+  }
+</style>
+</head>
+<body>
+
+<div class="address-block">
+  {{first_name}} {{last_name}}<br>
+  {{address_line1}}<br>
+  {{city}}, {{state}} {{zip}}
+</div>
+
+<div class="date">{{date}}</div>
+
+<div class="salutation">Dear {{first_name}} {{last_name}},</div>
+
+<div class="body-text">
+  <p>This letter serves as formal notice that your insurance policy will not be renewed at the end of its current term.</p>
+
+  <div class="notice-box">
+    <strong>Policy Number:</strong> {{policy_number}}<br>
+    <strong>Named Insured:</strong> {{first_name}} {{last_name}}<br>
+    <strong>Agency:</strong> {{agency_name}}
+  </div>
+
+  <p>Please be advised that your current coverage will remain in full effect until the policy expiration date. It is important that you obtain replacement coverage prior to that date to avoid any lapse in protection.</p>
+
+  <p>We recommend contacting an independent insurance agent or your state's Department of Insurance if you need assistance locating alternative coverage options.</p>
+
+  <p>Should you have any questions about this notice or your current policy, please contact our office at your earliest convenience.</p>
+</div>
+
+<div class="closing">
+  Respectfully,
+</div>
+
+<div class="signature">
+  {{agency_name}}
+</div>
+
+</body>
+</html>
