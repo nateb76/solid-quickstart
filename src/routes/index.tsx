@@ -89,7 +89,7 @@ export default function Home() {
           <span class="brand">
             <img
               class="brand-logo"
-              src="/vAI.png"
+              src="/vAI.svg"
               alt="Valya AI logo"
               width="32"
               height="32"
@@ -158,7 +158,7 @@ export default function Home() {
         <p class="section-eyebrow">Let's talk</p>
         <h2 class="section-title">Contact</h2>
         <p class="contact-lead">
-          Have a project in mind or want to learn more about what Valy AI can do for you?
+          Have a project in mind or want to learn more about what Valya AI can do for you?
           Reach out directly.
         </p>
         <div class="contact-card">
