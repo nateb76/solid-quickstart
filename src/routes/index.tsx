@@ -1,4 +1,5 @@
 import { Title, Meta } from "solid-start";
+import ContactForm from "~/components/ContactForm";
 
 const services = [
   {
@@ -161,12 +162,15 @@ export default function Home() {
           Have a project in mind or want to learn more about what Valya AI can do for you?
           Reach out directly.
         </p>
-        <div class="contact-card">
-          <p class="contact-name">Nate Bingel</p>
-          <p class="contact-role">Founder, Valya AI</p>
-          <a class="contact-email" href="mailto:nate@valyaai.us">
-            nate@valyaai.us
-          </a>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p class="contact-name">Nate Bingel</p>
+            <p class="contact-role">Founder, Valya AI</p>
+            <a class="contact-email" href="mailto:nate@valyaai.us">
+              nate@valyaai.us
+            </a>
+          </div>
+          <ContactForm />
         </div>
       </section>
 

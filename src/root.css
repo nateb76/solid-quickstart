@@ -422,6 +422,136 @@ a {
   text-underline-offset: 2px;
 }
 
+/* ---------- Contact form ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (min-width: 760px) {
+  .contact-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+  }
+}
+
+.contact-grid .contact-card {
+  margin: 0;
+  max-width: none;
+  text-align: center;
+}
+
+.contact-form {
+  padding: 2rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--panel-border);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+
+.field {
+  margin-bottom: 1.1rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--panel-border);
+  border-radius: 0.7rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(170, 179, 207, 0.6);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(109, 139, 255, 0.25);
+}
+
+.contact-submit {
+  width: 100%;
+  border: none;
+  margin-top: 0.25rem;
+}
+
+.contact-form-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---------- 404 ---------- */
+.notfound {
+  max-width: 640px;
+  margin: 5rem auto;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.notfound-code {
+  margin: 0;
+  font-size: clamp(5rem, 18vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background-image: linear-gradient(120deg, var(--accent), var(--accent-2), var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.notfound-title {
+  margin: 0.5rem 0 0.75rem;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.notfound-sub {
+  margin: 0 auto 2rem;
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.notfound .hero-actions {
+  justify-content: center;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   text-align: center;
