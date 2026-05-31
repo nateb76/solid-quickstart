@@ -1,0 +1,31 @@
+diff --git a/node_modules/solid-start/node/globals.js b/node_modules/solid-start/node/globals.js
+index e1a2286..b2654f5 100644
+--- a/node_modules/solid-start/node/globals.js
++++ b/node_modules/solid-start/node/globals.js
+@@ -2,10 +2,24 @@ import crypto from "crypto";
+ import Streams from "stream/web";
+ import { fetch, Headers, Request, Response } from "undici";
+ 
+-Object.assign(globalThis, Streams, {
++// Only polyfill globals that the runtime doesn't already provide.
++// Node 18+ defines several of these (notably `crypto`) as read-only
++// getters, so a blanket Object.assign throws. Assign defensively.
++const polyfills = {
++  ...Streams,
+   Request,
+   Response,
+   fetch,
+   Headers,
+   crypto: crypto.webcrypto
+-});
++};
++
++for (const [key, value] of Object.entries(polyfills)) {
++  if (globalThis[key] === undefined) {
++    try {
++      globalThis[key] = value;
++    } catch {
++      // Read-only global already provided by the runtime; leave it.
++    }
++  }
++}
