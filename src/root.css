@@ -364,6 +364,64 @@ a {
   transform: translateY(-2px);
 }
 
+/* ---------- Subpages (About / Legal) ---------- */
+.subpage-header {
+  padding: 0 1.25rem;
+}
+
+.legal {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  padding: 0 1.25rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.legal-title {
+  margin: 0.25rem 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.legal-meta {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.legal h2 {
+  margin: 2.25rem 0 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.legal p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.legal ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  color: var(--muted);
+}
+
+.legal li {
+  margin: 0.4rem 0;
+}
+
+.legal strong {
+  color: var(--text);
+}
+
+.legal a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   text-align: center;
@@ -371,6 +429,25 @@ a {
   color: var(--muted);
   border-top: 1px solid var(--panel-border);
   font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.footer-nav a {
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--accent);
 }
 
 .footer p {

@@ -171,6 +171,11 @@ export default function Home() {
       </section>
 
       <footer class="footer">
+        <nav class="footer-nav">
+          <a href="/about">About</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="mailto:nate@valyaai.us">Contact</a>
+        </nav>
         <p>© {new Date().getFullYear()} Valya AI Corp. All rights reserved.</p>
         <p class="footer-sub">Valya AI is a DBA of Valya AI Corp</p>
         <p class="footer-sub">Insurance &amp; business automation · iOS &amp; Windows apps · Legal automation · Custom MCPs</p>
