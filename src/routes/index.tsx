@@ -171,7 +171,8 @@ export default function Home() {
       </section>
 
       <footer class="footer">
-        <p>© {new Date().getFullYear()} Valya AI. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Valya AI Corp. All rights reserved.</p>
+        <p class="footer-sub">Valya AI is a DBA of Valya AI Corp</p>
         <p class="footer-sub">Insurance &amp; business automation · iOS &amp; Windows apps · Legal automation · Custom MCPs</p>
       </footer>
     </main>
