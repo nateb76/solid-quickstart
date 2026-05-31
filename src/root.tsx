@@ -22,8 +22,8 @@ export default function Root() {
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta name="theme-color" content="#0b1020" />
-        <Link rel="icon" href="/vAI_512.png" />
-        <Link rel="apple-touch-icon" href="/vAI_512.png" />
+        <Link rel="icon" type="image/svg+xml" href="/vAI.svg" />
+        <Link rel="apple-touch-icon" href="/vAI.svg" />
       </Head>
       <Body>
         <Suspense>

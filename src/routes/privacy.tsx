@@ -12,7 +12,7 @@ export default function Privacy() {
           <a class="brand" href="/">
             <img
               class="brand-logo"
-              src="/vAI.png"
+              src="/vAI.svg"
               alt="Valya AI logo"
               width="32"
               height="32"
