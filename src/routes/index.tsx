@@ -43,21 +43,64 @@ const services = [
     blurb:
       "Bespoke Model Context Protocol servers that securely connect AI assistants to your tools, data, and APIs — turning your internal systems into capabilities an AI can use.",
   },
+  {
+    icon: "🛡️",
+    title: "Insurance Agency Automation",
+    blurb:
+      "Purpose-built automation for independent agents: consumer-permissioned policy import, dec-page extraction, and two-way sync across agency management systems and CRMs like AgencyZoom, EZLynx, HawkSoft, and Momentum.",
+  },
+  {
+    icon: "📝",
+    title: "ACORD & Supplemental Auto-Fill",
+    blurb:
+      "Enter client and risk data once and auto-populate ACORD forms and carrier supplementals across the board — with cross-field validation and e-sign, eliminating duplicate data entry on commercial applications.",
+  },
+  {
+    icon: "📜",
+    title: "Certificate of Insurance (COI) Compliance",
+    blurb:
+      "Automated certificate issuance, tracking, and verification — AI reads policy language for coverage gaps and keeps compliance communications flowing to the right parties in real time.",
+  },
+  {
+    icon: "🌐",
+    title: "Carrier Portal Automation",
+    blurb:
+      "When a carrier has no public API, our secure browser-agent layer drives the portal for you — pulling renewals, books of business, and policy data, then routing it downstream to quoting, mail, and CRM.",
+  },
+  {
+    icon: "📞",
+    title: "AI Voice & Communication Agents",
+    blurb:
+      "AI-powered phone, SMS, and intake agents that handle renewals, reminders, and first-touch client conversations — integrated with your phone system, CRM, and direct-mail workflows.",
+  },
 ];
 
 export default function Home() {
   return (
     <main class="page">
-      <Title>Valy AI — Intelligent Automation, iOS & Windows Apps, Custom MCPs</Title>
+      <Title>Valya AI — Intelligent Automation, iOS & Windows Apps, Custom MCPs</Title>
       <Meta
         name="description"
-        content="Valy AI builds business automation apps, PostGrid-powered mail apps, native iOS and Windows applications, pre-litigation legal automation, and custom MCP servers."
+        content="Valya AI builds business and insurance-agency automation, PostGrid-powered mail apps, native iOS and Windows applications, ACORD form auto-fill, pre-litigation legal automation, and custom MCP servers."
       />
 
       <header class="hero">
         <nav class="nav">
           <span class="brand">
-            <span class="brand-mark">V</span> Valy&nbsp;AI
+            <img
+              class="brand-logo"
+              src="/vAI.png"
+              alt="Valya AI logo"
+              width="32"
+              height="32"
+              onError={(e) => {
+                const img = e.currentTarget;
+                img.style.display = "none";
+                const fallback = img.nextElementSibling as HTMLElement | null;
+                if (fallback) fallback.style.display = "inline-flex";
+              }}
+            />
+            <span class="brand-mark" style="display:none">V</span> Valya&nbsp;AI
           </span>
           <a class="nav-cta" href="#contact">
             Contact
@@ -70,8 +113,9 @@ export default function Home() {
             Intelligent software that does the <span class="grad">busywork</span> for you.
           </h1>
           <p class="hero-sub">
-            Valy AI designs and ships automation platforms, native apps, and custom AI
-            integrations for businesses — from the App Store to the back office.
+            Valya AI designs and ships automation platforms, native apps, and custom AI
+            integrations for businesses and insurance agencies — from the App Store to
+            the back office.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#services">
@@ -119,16 +163,16 @@ export default function Home() {
         </p>
         <div class="contact-card">
           <p class="contact-name">Nate Bingel</p>
-          <p class="contact-role">Founder, Valy AI</p>
-          <a class="contact-email" href="mailto:nate@valyai.us">
-            nate@valyai.us
+          <p class="contact-role">Founder, Valya AI</p>
+          <a class="contact-email" href="mailto:nate@valyaai.us">
+            nate@valyaai.us
           </a>
         </div>
       </section>
 
       <footer class="footer">
-        <p>© {new Date().getFullYear()} Valy AI. All rights reserved.</p>
-        <p class="footer-sub">Business automation · iOS &amp; Windows apps · Legal automation · Custom MCPs</p>
+        <p>© {new Date().getFullYear()} Valya AI. All rights reserved.</p>
+        <p class="footer-sub">Insurance &amp; business automation · iOS &amp; Windows apps · Legal automation · Custom MCPs</p>
       </footer>
     </main>
   );
